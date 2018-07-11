@@ -1,24 +1,71 @@
-.hero-background-container {
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	z-index: -100;
-	overflow: hidden;
-	.hero-background-image {
-		width: 100%;
-		height: 100%;
-		background-image: url("./images/ash-wood-background.png");
-		background-size: cover;
-		background-position: 60%;
-		position: absolute;
+@import "./Animations.scss";
+
+body {
+	background: #001b2b;
+}
+
+.portfolio {
+	height: 200vh;
+	.hero-background-container {
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		z-index: -100;
+		top: 0;
+		overflow: hidden;
+		opacity: 0;
+		animation: fadeIn 2s 2.5s forwards;
+		.hero-background-image {
+			width: 100%;
+			height: 100%;
+			background-image: url("./images/ash-wood-background.png");
+			background-size: cover;
+			background-position: 60%;
+			position: absolute;
+		}
+		.hero-background-gradient {
+			width: 100%;
+			height: 100%;
+			background-color: #0000ff;
+			background-image: linear-gradient(135deg, #00ffff 0%, #0000ff 50%, #00ffff 100%);
+			opacity: 0.8;
+			position: absolute;
+			z-index: 1;
+		}
 	}
-	.hero-background-gradient {
-		width: 100%;
-		height: 100%;
-		background-color: #0000ff;
-		background-image: linear-gradient(135deg, #00ffff 0%, #0000ff 50%, #00ffff 100%);
-		opacity: 0.8;
-		position: absolute;
-		z-index: 1;
+	.hero-data-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0 20px;
+		height: 100vh;
+		position: relative;
+		.hero-intro-text {
+			color: white;
+			text-align: center;
+			font-size: 2.25rem;
+			opacity: 0;
+			animation: fadeInDown 2s 2.5s forwards;
+		}
+		.hero-arrow {
+			width: 25px;
+			height: 25px;
+			stroke: white;
+			margin-top: 2px;
+			fill: transparent;
+			stroke-width: 10px;
+			overflow: unset !important;
+			stroke-dasharray: 85;
+			stroke-dashoffset: 85;
+			position: absolute;
+			bottom: 10px;
+			transition: 0.5s;
+			opacity: 1;
+			animation: arrowDrawIn 1.5s 4.5s forwards;
+			&.hidden {
+				opacity: 0;
+				bottom: 30px;
+			}
+		}
 	}
 }

@@ -1,0 +1,80 @@
+@import "./Animations.scss";
+
+.logo {
+	width: 100px;
+	height: 100px;
+	margin-top: 40px;
+	position: relative;
+	.hexagon {
+		stroke: white;
+		stroke-width: 18px;
+		fill: transparent;
+		overflow: unset;
+		position: absolute;
+		opacity: 0;
+		animation: hexagonAnimation 1s 0.5s forwards;
+	}
+	.center-v-line {
+		width: 6px;
+		height: 40px;
+		background: white;
+		position: absolute;
+		left: calc(50% - 3px);
+		top: calc(50% - 20px);
+		opacity: 0;
+		animation: centerVerticalLineAnimation 1s 0.5s forwards;
+	}
+	.left-v-line {
+		width: 6px;
+		height: 40px;
+		background: white;
+		position: absolute;
+		left: calc(50% - 23px);
+		top: calc(50% - 20px);
+		opacity: 0;
+		animation: leftVerticalLineAnimation 0.5s 1.5s forwards;
+	}
+	.right-v-line {
+		width: 6px;
+		height: 40px;
+		background: white;
+		position: absolute;
+		right: calc(50% - 23px);
+		top: calc(50% - 20px);
+		opacity: 0;
+		animation: rightVerticalLineAnimation 0.5s 2s forwards;
+	}
+	.a-top-line {
+		width: 26px;
+		height: 6px;
+		background: white;
+		position: absolute;
+		left: calc(50% - 23px);
+		top: calc(50% - 20px);
+		transform-origin: center right;
+		opacity: 0;
+		animation: letterLineAnimation 0.8s 1.5s forwards;
+	}
+	.a-mid-line {
+		width: 26px;
+		height: 6px;
+		background: white;
+		position: absolute;
+		left: calc(50% - 23px);
+		top: calc(50% - 3px);
+		transform-origin: center right;
+		opacity: 0;
+		animation: letterLineAnimation 0.8s 1.5s forwards;
+	}
+	.h-mid-line {
+		width: 26px;
+		height: 6px;
+		background: white;
+		position: absolute;
+		right: calc(50% - 23px);
+		top: calc(50% - 3px);
+		transform-origin: center left;
+		opacity: 0;
+		animation: letterLineAnimation 0.8s 2s forwards;
+	}
+}
