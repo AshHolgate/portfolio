@@ -16,8 +16,8 @@ class Portfolio extends Component {
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll);
 		setTimeout(function () {
-			window.scrollTo(0,0);
-		},100);
+			window.scrollTo(0, 0);
+		}, 100);
 	}
 
 	handleScroll() {
@@ -99,7 +99,29 @@ class Portfolio extends Component {
 					</svg>
 				</section>
 				<section className="experience-section">
-
+					<div className="projects-container">
+						<div className="title-container">
+							<div className="blue-line" />
+							<h2 className="title">Projects</h2>
+						</div>
+						<div className="project-container">
+							<h3 className="project-title">
+								WhenWillYou.Win
+							</h3>
+							<p className="project-sub-title">
+								Lottery Simulator
+							</p>
+							<p className="project-description">
+								Built in <b>React</b>, using <b>Redux</b>.
+							</p>
+							<p className="project-description">
+								First choose which lottery you'd like to simulate, either the UK Lotto or Euromillions, then pick your numbers and begin! The simulator will run accurate simulations as fast as your device will allow until you are lucky enough to hit the jackpot. When will you win?
+							</p>
+							<p className="project-description">
+								Project designed in XD using a mobile first approach, desktop layout informed by mobile design. Used animations between state transitions as a tool to communicate the flow of information, thus making the program more intuitive to use.
+							</p>
+						</div>
+					</div>
 				</section>
 			</div>
 		);

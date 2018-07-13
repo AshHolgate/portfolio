@@ -1,23 +1,20 @@
 @import "./Animations.scss";
+
 $mobile-mid: 375px;
 $mobile-large: 414px;
 $desktop: 768px;
+
+$dark-grey: #444;
+$light-grey: #bbb;
+
 a {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-html {
-	height: 100%;
-}
-
 body {
 	background: #001b2b;
-	font-size: 12px;
+	font-size: 16px;
 	box-sizing: border-box;
-	height: 100%;
-	@media(min-width: $mobile-mid) {
-		font-size: 16px;
-	}
 }
 
 .portfolio {
@@ -53,14 +50,18 @@ body {
 		flex-direction: column;
 		align-items: center;
 		padding: 0 20px;
+		width: calc(100% - 40px);
 		height: 100vh;
 		position: relative;
 		.hero-intro-text {
 			color: white;
 			text-align: center;
-			font-size: 2.3em;
+			font-size: 2em;
 			opacity: 0;
 			animation: fadeInDown 2s 2.5s forwards;
+			@media(min-width: $mobile-mid) {
+				font-size: 2.25em;
+			}
 		}
 		.hero-button {
 			color: white;
@@ -68,11 +69,11 @@ body {
 			font-weight: 700;
 			border: 4px solid white;
 			width: calc(100% - 80px);
-			height: 50px;
+			height: 45px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			font-size: 1.6em;
+			font-size: 1.8em;
 			opacity: 0;
 			margin-bottom: 15px;
 			overflow: hidden;
@@ -145,7 +146,7 @@ body {
 				flex-direction: column;
 				align-items: center;
 				.skill-choices-title {
-					font-size: 2em;
+					font-size: 1.8em;
 					margin: 0 0 20px 65px;
 					align-self: flex-start;
 					font-weight: 700;
@@ -165,8 +166,11 @@ body {
 						transform: scale(0.5) rotate(15deg);
 					}
 					.skill-choice-title {
-						font-size: 1.75em;
+						font-size: 1.4em;
 						color: white;
+						@media(min-width: $mobile-mid) {
+							font-size: 1.75em;
+						}
 					}
 					&.selected {
 						background: white;
@@ -181,7 +185,6 @@ body {
 							transition-timing-function: cubic-bezier(0.6, 1.2, 0.6, 1.2);
 						}
 						.skill-choice-title {
-							font-size: 1.75em;
 							color: blue;
 							transition: 0.3s;
 							margin-left: 5px;
@@ -200,11 +203,15 @@ body {
 					justify-content: center;
 					align-items: center;
 					width: 100%;
-					font-size: 1.6em;
+					font-size: 1.2em;
 					font-weight: 900;
 					text-transform: uppercase;
 					padding: 5px 0;
 					margin-top: 10px;
+					text-align: center;
+					@media(min-width: $mobile-mid) {
+						font-size: 1.6em;
+					}
 				}
 				.technical-competencies-list-container {
 					display: flex;
@@ -215,10 +222,13 @@ body {
 					.technical-competencies-list-item {
 						color: white;
 						width: 50%;
-						font-size: 1.6em;
+						font-size: 1.2em;
 						margin: 30px 0 0;
 						&:nth-child(even) {
 							text-align: right;
+						}
+						@media(min-width: $mobile-mid) {
+							font-size: 1.6em;
 						}
 					}
 				}
@@ -229,13 +239,64 @@ body {
 			height: 80px;
 			fill: white;
 			position: absolute;
-			bottom: 0;
+			bottom: -1px;
 			left: 0;
 		}
 	}
 	.experience-section {
+		color: $dark-grey;
 		background: white;
-		width: 100%;
+		width: calc(100% - 40px);
 		height: 100vh;
+		padding: 0 20px;
+		.title-container {
+			width: 100%;
+			margin-bottom: 10px;
+			.blue-line {
+				width: 70px;
+				height: 7px;
+				background: blue;
+			}
+			.title {
+				margin: 0;
+				text-transform: uppercase;
+				font-size: 2.75em;
+				color: black;
+				@media(min-width: $mobile-mid) {
+					font-size: 3em;
+				}
+			}
+		}
+		.projects-container {
+			.project-container {
+				.project-title {
+					font-size: 2em;
+					text-transform: uppercase;
+					margin: 0;
+					font-weight: 700;
+					color: black;
+					@media(min-width: $mobile-mid) {
+						font-size: 2.25em;
+					}
+				}
+				.project-sub-title {
+					font-size: 1.2em;
+					text-transform: uppercase;
+					margin: 0;
+					font-weight: 700;
+					color: $light-grey;
+					@media(min-width: $mobile-mid) {
+						font-size: 1.5em;
+					}
+				}
+				.project-description {
+					line-height: 30px;
+					text-align: justify; 
+					@media(min-width: $mobile-mid) {
+						font-size: 1.5em;
+					}
+				}
+			}
+		}
 	}
 }
