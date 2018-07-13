@@ -65,14 +65,34 @@ body {
 			@media(min-width: $mobile-mid) {
 				font-size: 2.25em;
 			}
+			@media(min-width: $desktop) {
+				font-size: 3.5em;
+			}
+			@media(min-width: $desktop-large) {
+				font-size: 4.5em;
+				width: 1000px;
+			}
+		}
+		.hero-button-organisational-container {
+			width: 100%;
+			@media(min-width: $desktop) {
+				display: flex;
+				justify-content: space-between;
+				width: 700px
+			}
+			@media(min-width: $desktop-large) {
+				width: 900px;
+			}
 		}
 		.hero-button {
+			box-sizing: border-box;
 			color: white;
 			text-decoration: none;
 			font-weight: 700;
 			border: 4px solid white;
-			width: calc(100% - 80px);
-			height: 45px;
+			width: 100%;
+			height: 55px;
+			padding: 0;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -86,7 +106,16 @@ body {
 				font-size: 1.8em;
 				height: 60px;
 				border: 5px solid white;
-				width: calc(100% - 100px);
+			}
+			@media(min-width: $desktop) {
+				width: 325px;
+				font-size: 2.4em;
+				height: 80px;
+				border: 7px solid white;
+			}
+			@media(min-width: $desktop-large) {
+				width: 425px;
+				font-size: 2.8em;
 			}
 			&:before {
 				content: "";
@@ -132,6 +161,14 @@ body {
 			&.hidden {
 				opacity: 0;
 				bottom: 100px;
+				@media(min-width: $desktop) {
+					bottom: 40px;
+				}
+			}
+			@media(min-width: $desktop) {
+				width: 45px;
+				height: 45px;
+				bottom: 20px;
 			}
 		}
 	}
