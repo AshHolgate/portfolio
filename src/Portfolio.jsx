@@ -9,12 +9,16 @@ class Portfolio extends Component {
 		this.state = {
 			isAtTopOfPage: true,
 			selectedSkill: 1,
+			scrollDisabled: true
 		};
 		this.handleScroll = this.handleScroll.bind(this)
 	}
 
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll);
+		setTimeout(() => {
+			this.setState({scrollDisabled: false});
+        },3000);
 	}
 
 	handleScroll() {
@@ -34,9 +38,9 @@ class Portfolio extends Component {
 	}
 
 	render() {
-		let { isAtTopOfPage, selectedSkill } = this.state;
+		let { isAtTopOfPage, selectedSkill, scrollDisabled } = this.state;
 		return (
-			<div className="portfolio">
+			<div className={scrollDisabled ? "portfolio locked" : "portfolio"}>
 				<div className="hero-background-container">
 					<div className="hero-background-gradient" />
 					<div className="hero-background-image" />
@@ -50,7 +54,7 @@ class Portfolio extends Component {
 					<a className="hero-button cv" href={pdf} target="_blank">Download CV</a>
 					<a className="hero-button contact" href="mailto:ashton.holgate@gmail.com">Get In Touch</a>
 				</div>
-				<div className="technical-competencies-section">
+				<section className="technical-competencies-section">
 					<div className="flex-organisational-container">
 						<div className="skill-choices-container">
 							<p className="skill-choices-title">I am a skilled:</p>
@@ -91,7 +95,13 @@ class Portfolio extends Component {
 							}
 						</div>
 					</div>
-				</div>
+					<svg className="diagonal-filler" viewBox="0 0 100 100" preserveAspectRatio="none">
+						<polygon points="0,0 0,100 100,100"></polygon>
+					</svg>
+				</section>
+				<section className="experience-section">
+
+				</section>
 			</div>
 		);
 	}
