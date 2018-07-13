@@ -8,17 +8,16 @@ class Portfolio extends Component {
 		super();
 		this.state = {
 			isAtTopOfPage: true,
-			selectedSkill: 1,
-			scrollDisabled: true
+			selectedSkill: 1
 		};
 		this.handleScroll = this.handleScroll.bind(this)
 	}
 
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll);
-		setTimeout(() => {
-			this.setState({scrollDisabled: false});
-        },3000);
+		setTimeout(function () {
+			window.scrollTo(0,0);
+		},100);
 	}
 
 	handleScroll() {
@@ -38,9 +37,9 @@ class Portfolio extends Component {
 	}
 
 	render() {
-		let { isAtTopOfPage, selectedSkill, scrollDisabled } = this.state;
+		let { isAtTopOfPage, selectedSkill } = this.state;
 		return (
-			<div className={scrollDisabled ? "portfolio locked" : "portfolio"}>
+			<div className="portfolio">
 				<div className="hero-background-container">
 					<div className="hero-background-gradient" />
 					<div className="hero-background-image" />
