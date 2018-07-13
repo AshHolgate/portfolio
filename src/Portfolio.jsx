@@ -105,9 +105,9 @@ class Portfolio extends Component {
 							<h2 className="title">Projects</h2>
 						</div>
 						<div className="project-container">
-							<h3 className="project-title">
+							<a className="project-title" href="https://www.whenwillyou.win" target="_blank">
 								WhenWillYou.Win
-							</h3>
+							</a>
 							<p className="project-sub-title">
 								Lottery Simulator
 							</p>
@@ -120,8 +120,39 @@ class Portfolio extends Component {
 							<p className="project-description">
 								Project designed in XD using a mobile first approach, desktop layout informed by mobile design. Used animations between state transitions as a tool to communicate the flow of information, thus making the program more intuitive to use.
 							</p>
+							<a className="project-button" href="https://www.whenwillyou.win" target="_blank">View Simulator</a>
 						</div>
 					</div>
+					<div className="experiences-container">
+						<div className="title-container">
+							<div className="blue-line" />
+							<h2 className="title">Experience</h2>
+						</div>
+						<div className="experience-container">
+							<div className="duration-line-container last" />
+							<div className="experience-details-container">
+								<div className="experience-duration-container">
+									<div className="experience-marker" />
+									<p className="experience-dates">Oct 2017 - Present</p>
+								</div>
+								<a className="experience-title" href="https://www.luxtripper.co.uk" target="_blank">
+									Luxtripper
+								</a>
+								<p className="experience-sub-title">
+									Front End Developer &amp; Lead Designer
+								</p>
+								<ul className="experience-bullets">
+									<li className="experience-bullet">Currently working as Luxtripper's primary front-end developer and lead designer</li>
+									<li className="experience-bullet">Redesigned and implemented key pages including hotel search, hotel landing, and bespoke itinerary pages</li>
+									<li className="experience-bullet">Designed and created internal sales and lead management system, increasing business efficiently and employee satisfaction</li>
+									<li className="experience-bullet">Produced 'Luxtripper Style Guide' to help coordinate design efforts between developers and business</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section className="footer">
+					<Logo isFooter={true}/>
 				</section>
 			</div>
 		);

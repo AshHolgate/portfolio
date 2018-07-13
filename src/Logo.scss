@@ -71,4 +71,78 @@
 		top: calc(50% - 3px);
 		animation: letterHLineAnimation 0.6s 2.25s forwards;
 	}
+	&.isFooterLogo {
+		width: 50px;
+		height: 50px;
+		margin: 10px 0;
+		.hexagon {
+			stroke: white;
+			stroke-width: 18px;
+			fill: transparent;
+			overflow: unset;
+			animation: unset;
+			opacity: 1;
+			transform: rotate(45deg);
+		}
+		.center-v-line {
+			width: 3px;
+			height: 20px;
+			background: white;
+			position: absolute;
+			left: calc(50% - 1.5px);
+			top: calc(50% - 10px);
+			animation: unset;
+			opacity: 1;
+		}
+		.left-v-line {
+			width: 3px;
+			height: 20px;
+			background: white;
+			position: absolute;
+			left: calc(50% - 11.5px);
+			top: calc(50% - 10px);
+			animation: unset;
+			opacity: 1;
+		}
+		.right-v-line {
+			width: 3px;
+			height: 20px;
+			background: white;
+			position: absolute;
+			right: calc(50% - 11.5px);
+			top: calc(50% - 10px);
+			animation: unset;
+			opacity: 1;
+		}
+		.a-top-line {
+			width: 10px;
+			height: 3px;
+			background: white;
+			position: absolute;
+			left: calc(50% - 10px);
+			top: calc(50% - 10px);
+			animation: unset;
+			opacity: 1;
+		}
+		.a-mid-line {
+			width: 10px;
+			height: 3px;
+			background: white;
+			position: absolute;
+			left: calc(50% - 10px);
+			top: calc(50% - 1.5px);
+			animation: unset;
+			opacity: 1;
+		}
+		.h-mid-line {
+			width: 6px;
+			height: 3px;
+			background: white;
+			position: absolute;
+			right: calc(50% - 10px);
+			top: calc(50% - 1.5px);
+			animation: unset;
+			opacity: 1;
+		}
+	}
 }
