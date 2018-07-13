@@ -58,13 +58,14 @@ body {
 			stroke-dasharray: 85;
 			stroke-dashoffset: 85;
 			position: absolute;
-			bottom: 10px;
+			bottom: 80px;
+			left: calc(50% - 12.5px);
 			transition: 0.5s;
 			opacity: 1;
 			animation: arrowDrawIn 1.5s 4.5s forwards;
 			&.hidden {
 				opacity: 0;
-				bottom: 30px;
+				bottom: 100px;
 			}
 		}
 	}

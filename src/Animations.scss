@@ -53,17 +53,21 @@
 	}
 }
 
-@keyframes letterLineAnimation {
+@keyframes letterALineAnimation {
 	0% {
-		opacity: 0;
-		transform: rotateY(90deg);
-	};
-	1% {
-		opacity: 1;
+		width: 0;
 	}
 	100% {
-		opacity: 1;
-		transform: rotateY(0deg);
+		width: 20px;
+	}
+}
+
+@keyframes letterHLineAnimation {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 14px;
 	}
 }
 

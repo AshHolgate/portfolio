@@ -42,39 +42,34 @@
 		right: calc(50% - 23px);
 		top: calc(50% - 20px);
 		opacity: 0;
-		animation: rightVerticalLineAnimation 0.5s 2s forwards;
+		animation: rightVerticalLineAnimation 0.5s 1.75s forwards;
 	}
 	.a-top-line {
-		width: 26px;
+		width: 0px;
 		height: 6px;
 		background: white;
 		position: absolute;
-		left: calc(50% - 23px);
+		left: calc(50% - 20px);
 		top: calc(50% - 20px);
-		transform-origin: center right;
-		opacity: 0;
-		animation: letterLineAnimation 0.8s 1.5s forwards;
+		animation: letterALineAnimation 0.8s 2s forwards;
 	}
 	.a-mid-line {
-		width: 26px;
+		width: 0px;
 		height: 6px;
 		background: white;
 		position: absolute;
-		left: calc(50% - 23px);
+		left: calc(50% - 20px);
 		top: calc(50% - 3px);
-		transform-origin: center right;
-		opacity: 0;
-		animation: letterLineAnimation 0.8s 1.5s forwards;
+		animation: letterALineAnimation 0.8s 2s forwards;
 	}
 	.h-mid-line {
-		width: 26px;
+		width: 0px;
 		height: 6px;
 		background: white;
 		position: absolute;
-		right: calc(50% - 23px);
+		right: calc(50% - 20px);
 		top: calc(50% - 3px);
-		transform-origin: center left;
-		opacity: 0;
-		animation: letterLineAnimation 0.8s 2s forwards;
+		animation: letterHLineAnimation 0.8s 2.25s forwards;
+		// transform: skew(-20deg);
 	}
 }

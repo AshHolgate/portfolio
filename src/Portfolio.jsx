@@ -16,7 +16,6 @@ class Portfolio extends Component {
 	}
 
 	handleScroll() {
-		console.log(window.pageYOffset);
 		if(window.pageYOffset > 0) {
 			this.setState({isAtTopOfPage: false});
 		} else {
