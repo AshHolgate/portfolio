@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Logo from './Logo';
 import './Portfolio.scss';
+import pdf from "./pdfs/Ashton Holgate - CV.pdf";
 
 class Portfolio extends Component {
 	constructor() {
@@ -37,6 +38,7 @@ class Portfolio extends Component {
 					<svg className={isAtTopOfPage ? "hero-arrow" : "hero-arrow hidden"} viewBox="0 0 60 30">
 						<path d="M0 0 L30 30 L60 0"></path>
 					</svg>
+					<a href={pdf} target="_blank">DOWNLOAD CV</a>
 				</div>
 			</div>
 		);
