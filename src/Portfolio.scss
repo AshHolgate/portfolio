@@ -6,6 +6,7 @@ body {
 
 .portfolio {
 	height: 200vh;
+	box-sizing: border-box;
 	.hero-background-container {
 		width: 100vw;
 		height: 100vh;
@@ -46,6 +47,47 @@ body {
 			font-size: 2.25rem;
 			opacity: 0;
 			animation: fadeInDown 2s 2.5s forwards;
+		}
+		.hero-button {
+			color: white;
+			text-decoration: none;
+			font-weight: 700;
+			border: 5px solid white;
+			width: calc(100% - 100px);
+			height: 60px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.5rem;
+			opacity: 0;
+			margin-bottom: 15px;
+			overflow: hidden;
+			position: relative;
+			transition: 0.3s;
+			&:before {
+				content: "";
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: -100%;
+				transform-origin: top right;
+				z-index: -1;
+				background: white;
+				transition: 0.3s;
+			}
+			&:hover {
+				color: blue;
+			}
+			&:hover:before {
+				left: 0px;
+			}
+			&.cv {
+				animation: fadeInDown 2s 2.75s forwards;
+			}
+			&.contact {
+				animation: fadeInDown 2s 3s forwards;
+			}
 		}
 		.hero-arrow {
 			width: 25px;

@@ -38,7 +38,8 @@ class Portfolio extends Component {
 					<svg className={isAtTopOfPage ? "hero-arrow" : "hero-arrow hidden"} viewBox="0 0 60 30">
 						<path d="M0 0 L30 30 L60 0"></path>
 					</svg>
-					<a href={pdf} target="_blank">DOWNLOAD CV</a>
+					<a className="hero-button cv" href={pdf} target="_blank">Download CV</a>
+					<a className="hero-button contact" href="mailto:ashton.holgate@gmail.com">Get In Touch</a>
 				</div>
 			</div>
 		);
