@@ -46,7 +46,7 @@ class Portfolio extends Component {
 				</div>
 				<div className="hero-data-container">
 					<Logo />
-					<h1 className="hero-intro-text">Hi, I'm Ashton.<br />I design and build outstanding web experiences.</h1>
+					<h1 className="hero-intro-text">Hi, I'm Ashton. I design and build outstanding web experiences.</h1>
 					<svg className={isAtTopOfPage ? "hero-arrow" : "hero-arrow hidden"} viewBox="0 0 60 30">
 						<path d="M0 0 L30 30 L60 0"></path>
 					</svg>

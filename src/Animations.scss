@@ -1,3 +1,5 @@
+@import "./Variables";
+
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
@@ -103,5 +105,64 @@
 	to {
 		transform: translateY(0px);
 		stroke-dashoffset: 0;
+	}
+}
+
+@media (min-width: $desktop) {
+	@keyframes leftVerticalLineAnimation {
+		0% {
+			left: calc(50% - 6px);
+			opacity: 0;
+		};
+		1% {
+			opacity: 1;
+		}
+		100% {
+			left: calc(50% - 43px);
+			opacity: 1;
+		}
+	}
+	
+	@keyframes letterALineAnimation {
+		0% {
+			width: 0;
+		}
+		100% {
+			width: 40px;
+		}
+	}
+	
+	@keyframes letterHLineAnimation {
+		0% {
+			width: 0;
+		}
+		100% {
+			width: 28px;
+		}
+	}
+	
+	@keyframes rightVerticalLineAnimation {
+		0% {
+			right: calc(50% - 6px);
+			opacity: 0;
+		};
+		1% {
+			opacity: 1;
+		}
+		100% {
+			right: calc(50% - 43px);
+			opacity: 1;
+		}
+	}
+	
+	@keyframes arrowDrawIn {
+		from {
+			transform: translateY(-20px);
+			stroke-dashoffset: 85;
+		}
+		to {
+			transform: translateY(0px);
+			stroke-dashoffset: 0;
+		}
 	}
 }
