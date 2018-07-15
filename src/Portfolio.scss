@@ -62,6 +62,7 @@ body {
 		padding: 0 20px;
 		width: calc(100% - 40px);
 		height: 100vh;
+		min-height: 550px;
 		position: relative;
 		.hero-intro-text {
 			color: white;
@@ -73,10 +74,11 @@ body {
 				font-size: 2.25em;
 			}
 			@media(min-width: $desktop) {
+				margin-top: 40px;
 				font-size: 3.5em;
 			}
 			@media(min-width: $desktop-large) {
-				font-size: 4.5em;
+				font-size: 4em;
 				width: 1000px;
 			}
 		}
@@ -117,8 +119,8 @@ body {
 			@media(min-width: $desktop) {
 				width: 325px;
 				font-size: 2.4em;
-				height: 80px;
-				border: 7px solid white;
+				border: 5px solid white;
+				height: 100px;
 			}
 			@media(min-width: $desktop-large) {
 				width: 425px;
@@ -179,142 +181,185 @@ body {
 			}
 		}
 	}
-	.technical-competencies-section {
+	.darkened-gradient-section {
 		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
-		width: calc(100% - 40px);
-		min-height: 600px;
-		padding: 0 20px;
 		position: relative;
-		.skill-choices-title {
-			font-size: 1.4em;
-			margin: 0 0 15px 0px;
-			align-self: flex-start;
-			color: white;
-			font-weight: 400;
-		}
-		.flex-organisational-container {
-			display: flex;
-			flex-direction: column;
-			.skill-choices-container {
-				color: white;
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-				align-items: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 600px;
+		.technical-competencies-section {
+			width: calc(100% - 40px);
+			padding: 0 20px;
+			max-width: 1000px;
+			.skill-choices-title-mobile {
+				font-size: 1.4em;
+				margin: 0 0 15px;
+				color: #fff;
 				@media(min-width: $desktop) {
-					flex-direction: column;
-					justify-content: flex-start;
-				}
-				.skill-choice-container {
-					width: calc(50% - 10px);
-					background: transparent;
-					border-radius: 10px;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					.skill-choice-icon {
-						width: 35px;
-						padding: 15px;
-						fill: transparent;
-						transform: scale(0.5) rotate(15deg);
-						display: none;
-						@media(min-width: $desktop) {
-							display: block;
-						}
-					}
-					.skill-choice-title {
-						font-size: 1.4em;
-						color: white;
-						margin: 10px;
-					}
-					&.selected {
-						background: white;
-						box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-						transition: 0.3s;
-						.skill-choice-icon {
-							width: 35px;
-							padding: 15px;
-							fill: blue;
-							transform: scale(1);
-							transition: 0.3s;
-							transition-timing-function: cubic-bezier(0.6, 1.2, 0.6, 1.2);
-						}
-						.skill-choice-title {
-							color: blue;
-							transition: 0.3s;
-							@media(min-width: $desktop) {
-								margin-left: 5px;
-							}
-						}
-					}
+					display: none;
 				}
 			}
-			.skill-choice-info-container {
-				.skill-choice-description-container {
-					.skill-choice-mobile-border {
-						margin: 15px 0 0;
-						width: 100%;
-						height: 1px;
-						background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 0) 100%);
-						@media(min-width: $desktop) {
-							display: none;
-						}
-					}
-					.skill-choice-description-title {
-						display: none;
-					}
-					.skill-choice-description {
-						color: white;
-						font-size: 1.2em;
-						line-height: 30px;
-						margin: 10px 0 20px;
-						animation: fadeInDownList 0.3s forwards;
+			.flex-organisational-container {
+				display: flex;
+				flex-direction: column;
+				@media(min-width: $desktop) {
+					flex-direction: row;
+				}
+				.skill-choices-title {
+					color: white;
+					font-size: 3em;
+					margin: 0;
+					display: none;
+					margin-bottom: 10px;
+					@media(min-width: $desktop) {
+						display: block;
 					}
 				}
-				.technical-competencies-container {
+				.skill-choices-container {
+					color: white;
 					display: flex;
-					flex-direction: column;
+					flex-direction: row;
+					justify-content: space-between;
 					align-items: center;
-					.technical-competencies-title {
-						background: white;
-						color: blue;
+					@media(min-width: $desktop) {
+						flex-direction: column;
+						justify-content: flex-start;
+						min-width: 300px;
+					}
+					.skill-choice-container {
+						width: calc(50% - 10px);
+						background: transparent;
+						border-radius: 10px;
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						width: 100%;
-						font-size: 1.2em;
-						font-weight: 900;
-						text-transform: uppercase;
-						padding: 5px 0;
-						text-align: center;
-						animation: fadeInDownList 0.3s forwards;
-					}
-					.technical-competencies-list-container {
-						display: flex;
-						flex-direction: row;
-						flex-wrap: wrap;
-						width: 100%;
-						animation: fadeInDownList 0.3s forwards;
-						.technical-competencies-list-item {
+						@media(min-width: $desktop) {
+							justify-content: flex-start;
+							width: 100%;
+							margin-top: 10px;
+						}
+						.skill-choice-icon {
+							width: 35px;
+							padding: 15px;
+							fill: transparent;
+							transform: scale(0.5) rotate(15deg);
+							display: none;
+							@media(min-width: $desktop) {
+								display: block;
+							}
+						}
+						.skill-choice-title {
+							font-size: 1.4em;
 							color: white;
-							width: 50%;
+							margin: 10px 0;
+						}
+						&.selected {
+							background: white;
+							box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+							transition: 0.3s;
+							.skill-choice-icon {
+								width: 35px;
+								padding: 15px;
+								fill: blue;
+								transform: scale(1);
+								transition: 0.3s;
+								transition-timing-function: cubic-bezier(0.6, 1.2, 0.6, 1.2);
+							}
+							.skill-choice-title {
+								color: blue;
+								transition: 0.3s;
+								@media(min-width: $desktop) {
+									margin-left: 5px;
+								}
+							}
+						}
+					}
+				}
+				.technical-competencies-desktop-border {
+					display: none;
+					min-width: 1px;
+					height: 400px;
+					margin: 0 20px;
+					background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 0) 100%);
+					@media(min-width: $desktop) {
+						display: block;
+					}
+				}
+				.skill-choice-info-container {
+					.skill-choice-description-container {
+						.skill-choice-mobile-border {
+							margin: 15px 0 0;
+							width: 100%;
+							height: 1px;
+							background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 0) 100%);
+							@media(min-width: $desktop) {
+								display: none;
+							}
+						}
+						.skill-choice-description-title {
+							display: none;
+							@media(min-width: $desktop) {
+								display: block;
+								color: white;
+								font-size: 3em;
+								margin: 0;
+								animation: fadeInDownList 0.3s forwards;
+							}
+						}
+						.skill-choice-description {
+							color: white;
 							font-size: 1.2em;
-							margin: 30px 0 0;
-							&:nth-child(even) {
-								text-align: right;
+							line-height: 30px;
+							margin: 10px 0 20px;
+							animation: fadeInDownList 0.3s forwards;
+						}
+					}
+					.technical-competencies-container {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						.technical-competencies-title {
+							background: white;
+							color: blue;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							width: 100%;
+							font-size: 1.2em;
+							font-weight: 900;
+							text-transform: uppercase;
+							padding: 5px 0;
+							text-align: center;
+							animation: fadeInDownList 0.3s forwards;
+						}
+						.technical-competencies-list-container {
+							display: flex;
+							flex-direction: row;
+							flex-wrap: wrap;
+							width: 100%;
+							animation: fadeInDownList 0.3s forwards;
+							.technical-competencies-list-item {
+								color: white;
+								width: 50%;
+								font-size: 1.2em;
+								margin: 30px 0 0;
+								&:nth-child(even) {
+									text-align: right;
+								}
 							}
 						}
 					}
 				}
 			}
-		}
-		.diagonal-filler {
-			width: 100%;
-			height: 80px;
-			fill: white;
-			position: absolute;
-			bottom: -1px;
-			left: 0;
+			.diagonal-filler {
+				width: 100%;
+				height: 80px;
+				fill: white;
+				position: absolute;
+				bottom: -1px;
+				left: 0;
+			}
 		}
 	}
 	.experience-section {
