@@ -1,14 +1,11 @@
 @import "./Animations.scss";
 @import "./Variables.scss";
-
 $mobile-small: 360px;
 $mobile-mid: 375px;
 $mobile-large: 414px;
 $desktop: 768px;
-
 $dark-grey: #444;
 $light-grey: #bbb;
-
 a {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	text-decoration: none;
@@ -30,13 +27,23 @@ body {
 		overflow: hidden;
 		opacity: 0;
 		animation: fadeIn 2s 2.5s forwards;
-		.hero-background-image {
+		.hero-background-image-1 {
+			width: 100%;
+			height: 100%;
+			background-image: url("./images/ash-city-background.jpg");
+			background-size: cover;
+			background-position: 35%;
+			position: absolute;
+			animation: background1FadeInOut 30s 2.5s linear infinite;
+		}
+		.hero-background-image-2 {
 			width: 100%;
 			height: 100%;
 			background-image: url("./images/ash-wood-background.png");
 			background-size: cover;
 			background-position: 60%;
 			position: absolute;
+			animation: background2FadeInOut 30s 2.5s linear infinite;
 		}
 		.hero-background-gradient {
 			width: 100%;
@@ -178,37 +185,47 @@ body {
 		min-height: 600px;
 		padding: 0 20px;
 		position: relative;
+		.skill-choices-title {
+			font-size: 1.4em;
+			margin: 0 0 15px 0px;
+			align-self: flex-start;
+			color: white;
+			font-weight: 400;
+		}
 		.flex-organisational-container {
 			display: flex;
 			flex-direction: column;
 			.skill-choices-container {
 				color: white;
 				display: flex;
-				flex-direction: column;
+				flex-direction: row;
+				justify-content: space-between;
 				align-items: center;
-				.skill-choices-title {
-					font-size: 1.8em;
-					margin: 0 0 20px 65px;
-					align-self: flex-start;
-					font-weight: 700;
+				@media(min-width: $desktop) {
+					flex-direction: column;
+					justify-content: flex-start;
 				}
 				.skill-choice-container {
-					width: 100%;
+					width: calc(50% - 10px);
 					background: transparent;
 					border-radius: 10px;
 					display: flex;
-					justify-content: flex-start;
+					justify-content: center;
 					align-items: center;
-					margin-bottom: 10px;
 					.skill-choice-icon {
 						width: 35px;
 						padding: 15px;
 						fill: transparent;
 						transform: scale(0.5) rotate(15deg);
+						display: none;
+						@media(min-width: $desktop) {
+							display: block;
+						}
 					}
 					.skill-choice-title {
 						font-size: 1.4em;
 						color: white;
+						margin: 10px;
 					}
 					&.selected {
 						background: white;
@@ -225,42 +242,67 @@ body {
 						.skill-choice-title {
 							color: blue;
 							transition: 0.3s;
-							margin-left: 5px;
+							@media(min-width: $desktop) {
+								margin-left: 5px;
+							}
 						}
 					}
 				}
 			}
-			.technical-competencies-container {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				.technical-competencies-title {
-					background: white;
-					color: blue;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					width: 100%;
-					font-size: 1.2em;
-					font-weight: 900;
-					text-transform: uppercase;
-					padding: 5px 0;
-					margin-top: 10px;
-					text-align: center;
-				}
-				.technical-competencies-list-container {
-					display: flex;
-					flex-direction: row;
-					flex-wrap: wrap;
-					width: 100%;
-					animation: fadeInDownList 0.3s forwards;
-					.technical-competencies-list-item {
+			.skill-choice-info-container {
+				.skill-choice-description-container {
+					.skill-choice-mobile-border {
+						margin: 15px 0 0;
+						width: 100%;
+						height: 1px;
+						background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 0) 100%);
+						@media(min-width: $desktop) {
+							display: none;
+						}
+					}
+					.skill-choice-description-title {
+						display: none;
+					}
+					.skill-choice-description {
 						color: white;
-						width: 50%;
 						font-size: 1.2em;
-						margin: 30px 0 0;
-						&:nth-child(even) {
-							text-align: right;
+						line-height: 30px;
+						margin: 10px 0 20px;
+						animation: fadeInDownList 0.3s forwards;
+					}
+				}
+				.technical-competencies-container {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					.technical-competencies-title {
+						background: white;
+						color: blue;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 100%;
+						font-size: 1.2em;
+						font-weight: 900;
+						text-transform: uppercase;
+						padding: 5px 0;
+						text-align: center;
+						animation: fadeInDownList 0.3s forwards;
+					}
+					.technical-competencies-list-container {
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						width: 100%;
+						animation: fadeInDownList 0.3s forwards;
+						.technical-competencies-list-item {
+							color: white;
+							width: 50%;
+							font-size: 1.2em;
+							margin: 30px 0 0;
+							&:nth-child(even) {
+								text-align: right;
+							}
 						}
 					}
 				}
@@ -300,7 +342,7 @@ body {
 		}
 		.projects-container {
 			.project-container {
-				padding-bottom: 30px; 
+				padding-bottom: 30px;
 				.project-title {
 					font-size: 1.7em;
 					text-transform: uppercase;
@@ -337,7 +379,7 @@ body {
 					font-size: 1.2em;
 					margin-bottom: 15px;
 					text-transform: uppercase;
-					z-index: 10; 
+					z-index: 10;
 					overflow: hidden;
 					position: relative;
 					transition: 0.3s;
@@ -402,7 +444,7 @@ body {
 						height: 21px;
 						background: blue;
 						border-radius: 50%;
-						box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+						box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 						z-index: 10;
 					}
 					.experience-dates {
@@ -444,6 +486,6 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: rgba(0,0,0,0.5)
+		background: rgba(0, 0, 0, 0.5)
 	}
 }
