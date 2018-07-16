@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Logo from './Logo';
 import './Portfolio.scss';
 import pdf from "./pdfs/Ashton Holgate - CV.pdf";
+import ReactGA from "react-ga";
 
 class Portfolio extends Component {
 	constructor() {
@@ -18,6 +19,8 @@ class Portfolio extends Component {
 		setTimeout(function () {
 			window.scrollTo(0, 0);
 		}, 100);
+		ReactGA.initialize("UA-122473550-1");
+		ReactGA.pageview(window.location.pathname);
 	}
 
 	handleScroll() {
@@ -52,14 +55,24 @@ class Portfolio extends Component {
 						<path d="M0 0 L30 30 L60 0"></path>
 					</svg>
 					<div className="hero-button-organisational-container">
-						<a className="hero-button cv" href={pdf} target="_blank">Download CV</a>
-						<a className="hero-button contact" href="mailto:ashton.holgate@gmail.com">Get In Touch</a>
+						<ReactGA.OutboundLink className="hero-button cv"
+							eventLabel="Downloaded CV"
+							to={pdf}
+							target="_blank">
+							Download CV
+      					</ReactGA.OutboundLink>
+						<ReactGA.OutboundLink className="hero-button contact"
+							eventLabel="Opened Email Editor"
+							to="mailto:ashton.holgate@gmail.com"
+							target="_blank">
+							Get In Touch
+      					</ReactGA.OutboundLink>
 					</div>
 				</div>
 				<section className="darkened-gradient-section">
 					<div className="technical-competencies-section">
 						<div className="flex-organisational-container">
-						<p className="skill-choices-title-mobile">I am a skilled:</p>
+							<p className="skill-choices-title-mobile">I am a skilled:</p>
 							<div className="skill-choices-container">
 								<p className="skill-choices-title">I am a skilled:</p>
 								<div className={selectedSkill === 1 ? "skill-choice-container selected" : "skill-choice-container"} onMouseEnter={() => this.handleSelectedSkillHover(1)}>
@@ -135,9 +148,12 @@ class Portfolio extends Component {
 							<h2 className="title">Projects</h2>
 						</div>
 						<div className="project-container">
-							<a className="project-title" href="https://www.whenwillyou.win" target="_blank">
+							<ReactGA.OutboundLink className="project-title"
+								eventLabel="Visited WhenWillYou.Win Via Title"
+								to="https://www.whenwillyou.win"
+								target="_blank">
 								WhenWillYou.Win
-							</a>
+      						</ReactGA.OutboundLink>
 							<p className="project-sub-title">
 								Lottery Simulator
 							</p>
@@ -150,7 +166,12 @@ class Portfolio extends Component {
 							<p className="project-description">
 								Project designed in XD using a mobile first approach, desktop layout informed by mobile design. Used animations between state transitions as a tool to communicate the flow of information, thus making the program more intuitive to use.
 							</p>
-							<a className="project-button" href="https://www.whenwillyou.win" target="_blank">View Simulator</a>
+							<ReactGA.OutboundLink className="project-button"
+								eventLabel="Visited WhenWillYou.Win Via Button"
+								to="https://www.whenwillyou.win"
+								target="_blank">
+								View Simulator
+      						</ReactGA.OutboundLink>
 						</div>
 					</div>
 					<div className="experiences-container">
@@ -165,9 +186,12 @@ class Portfolio extends Component {
 									<div className="experience-marker" />
 									<p className="experience-dates">Oct 2017 - Present</p>
 								</div>
-								<a className="experience-title" href="https://www.luxtripper.co.uk" target="_blank">
+								<ReactGA.OutboundLink className="experience-title"
+									eventLabel="Visited Luxtripper Via Title"
+									to="https://www.whenwillyou.win"
+									target="_blank">
 									Luxtripper
-								</a>
+      							</ReactGA.OutboundLink>
 								<p className="experience-sub-title">
 									Front End Developer &amp; Lead Designer
 								</p>
