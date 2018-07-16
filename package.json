@@ -2,7 +2,7 @@
 	"name": "portfolio-2018",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "http://ashholgate.github.io/portfolio",
+	"homepage": "http://www.ashtonholgate.com",
 	"dependencies": {
 		"autoprefixer": "7.1.6",
 		"babel-core": "6.26.0",
