@@ -4,6 +4,11 @@ $mobile-small: 360px;
 $mobile-mid: 375px;
 $mobile-large: 414px;
 $desktop: 768px;
+$desktop-font-title-large: 4em;
+$desktop-font-title: 3em;
+$desktop-font-sub-title: 2em;
+$desktop-font-small: 1.4em;
+$desktop-font-sub-small: 1.125em;
 $dark-grey: #444;
 $light-grey: #bbb;
 a {
@@ -64,6 +69,7 @@ body {
 		height: 100vh;
 		min-height: 550px;
 		position: relative;
+		user-select: none;
 		.hero-intro-text {
 			color: white;
 			text-align: center;
@@ -76,10 +82,12 @@ body {
 			@media(min-width: $desktop) {
 				margin-top: 40px;
 				font-size: 3.5em;
+				line-height: 70px;
 			}
 			@media(min-width: $desktop-large) {
-				font-size: 4em;
+				font-size: $desktop-font-title-large;
 				width: 1000px;
+				line-height: 86px;
 			}
 		}
 		.hero-button-organisational-container {
@@ -119,7 +127,7 @@ body {
 			@media(min-width: $desktop) {
 				width: 325px;
 				font-size: 2.4em;
-				border: 5px solid white;
+				border: 6px solid white;
 				height: 100px;
 			}
 			@media(min-width: $desktop-large) {
@@ -149,6 +157,15 @@ body {
 			}
 			&.contact {
 				animation: fadeInDown 2s 3s forwards;
+				@media(min-width: $desktop) {
+					&:before {
+						left: unset;
+						right: -100% !important;
+					}
+					&:hover:before {
+						right: 0px !important;
+					}
+				}
 			}
 		}
 		.hero-arrow {
@@ -166,7 +183,7 @@ body {
 			left: calc(50% - 12.5px);
 			transition: 0.5s;
 			opacity: 1;
-			animation: arrowDrawIn 1.5s 4.5s forwards;
+			animation: arrowDrawIn 1.5s 3.5s forwards;
 			&.hidden {
 				opacity: 0;
 				bottom: 100px;
@@ -178,6 +195,7 @@ body {
 				width: 45px;
 				height: 45px;
 				bottom: 20px;
+				left: calc(50% - 22.5px);
 			}
 		}
 	}
@@ -188,6 +206,13 @@ body {
 		flex-direction: column;
 		align-items: center;
 		height: 600px;
+		user-select: none;
+		@media(min-width: $desktop) {
+			height: 700px;
+		}
+		@media(min-width: $desktop-large) {
+			height: 650px;
+		}
 		.technical-competencies-section {
 			width: calc(100% - 40px);
 			padding: 0 20px;
@@ -208,7 +233,7 @@ body {
 				}
 				.skill-choices-title {
 					color: white;
-					font-size: 3em;
+					font-size: $desktop-font-title;
 					margin: 0;
 					display: none;
 					margin-bottom: 10px;
@@ -253,6 +278,10 @@ body {
 							font-size: 1.4em;
 							color: white;
 							margin: 10px 0;
+							@media (min-width: $desktop) {
+								font-size: $desktop-font-small;
+								padding: 0;
+							}
 						}
 						&.selected {
 							background: white;
@@ -279,7 +308,7 @@ body {
 				.technical-competencies-desktop-border {
 					display: none;
 					min-width: 1px;
-					height: 400px;
+					height: 450px;
 					margin: 0 20px;
 					background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 0) 100%);
 					@media(min-width: $desktop) {
@@ -302,7 +331,7 @@ body {
 							@media(min-width: $desktop) {
 								display: block;
 								color: white;
-								font-size: 3em;
+								font-size: $desktop-font-title;
 								margin: 0;
 								animation: fadeInDownList 0.3s forwards;
 							}
@@ -313,6 +342,10 @@ body {
 							line-height: 30px;
 							margin: 10px 0 20px;
 							animation: fadeInDownList 0.3s forwards;
+							@media (min-width: $desktop) {
+								font-size: $desktop-font-small;
+								line-height: 42px;
+							}
 						}
 					}
 					.technical-competencies-container {
@@ -347,6 +380,9 @@ body {
 								&:nth-child(even) {
 									text-align: right;
 								}
+								@media (min-width: $desktop) {
+									font-size: $desktop-font-small;
+								}
 							}
 						}
 					}
@@ -359,6 +395,12 @@ body {
 				position: absolute;
 				bottom: -1px;
 				left: 0;
+				@media (min-width: $desktop) {
+					height: 150px;
+				}
+				@media (min-width: $desktop-large) {
+					height: 200px;
+				}
 			}
 		}
 	}
@@ -367,6 +409,11 @@ body {
 		background: white;
 		width: calc(100% - 40px);
 		padding: 0 20px;
+		@media (min-width: $desktop) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 		.title-container {
 			width: 100%;
 			margin-bottom: 10px;
@@ -374,6 +421,9 @@ body {
 				width: 70px;
 				height: 7px;
 				background: blue;
+				@media(min-width: $desktop) {
+					height: 10px;
+				}
 			}
 			.title {
 				margin: 0;
@@ -383,9 +433,14 @@ body {
 				@media(min-width: $mobile-mid) {
 					font-size: 3em;
 				}
+				@media(min-width: $desktop) {
+					font-size: $desktop-font-title-large;
+				}
 			}
 		}
 		.projects-container {
+			width: 100%;
+			max-width: 1400px;
 			.project-container {
 				padding-bottom: 30px;
 				.project-title {
@@ -397,6 +452,9 @@ body {
 					@media(min-width: $mobile-small) {
 						font-size: 2em;
 					}
+					@media(min-width: $desktop) {
+						font-size: $desktop-font-title;
+					}
 				}
 				.project-sub-title {
 					font-size: 1.2em;
@@ -407,9 +465,16 @@ body {
 					@media(min-width: $mobile-mid) {
 						font-size: 1.5em;
 					}
+					@media(min-width: $desktop) {
+						font-size: $desktop-font-sub-title;
+					}
 				}
 				.project-description {
 					line-height: 30px;
+					@media(min-width: $desktop) {
+						line-height: 42px;
+						font-size: $desktop-font-small;
+					}
 				}
 				.project-button {
 					color: $dark-grey;
@@ -428,9 +493,14 @@ body {
 					overflow: hidden;
 					position: relative;
 					transition: 0.3s;
+					user-select: none;
 					@media(min-width: $mobile-mid) {
 						height: 60px;
 						border: 4px solid $dark-grey;
+					}
+					@media(min-width: $desktop) {
+						font-size: $desktop-font-small;
+						height: 70px;
 					}
 					&:before {
 						content: "";
@@ -463,74 +533,97 @@ body {
 				}
 			}
 		}
-		.experience-container {
-			display: flex;
-			padding-bottom: 20px;
-			.duration-line-container {
-				margin-left: 4px;
-				min-width: 7px;
-				min-height: 100%;
-				background: #e3e3e3;
+		.experiences-container {
+			width: 100%;
+			max-width: 1400px;
+			.experience-container {
+				display: flex;
+				padding-bottom: 20px;
 				position: relative;
-				&.last {
-					background: unset;
-					background-image: linear-gradient(to bottom, rgba(227, 227, 227, 1) 50%, rgba(227, 227, 227, 0) 100%);
-				}
-			}
-			.experience-details-container {
-				padding-left: 15px;
-				.experience-duration-container {
-					display: flex;
-					align-items: center;
-					.experience-marker {
-						position: absolute;
-						left: 17px;
-						width: 21px;
-						height: 21px;
-						background: blue;
-						border-radius: 50%;
-						box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-						z-index: 10;
+				.duration-line-container {
+					margin-left: 4px;
+					min-width: 7px;
+					min-height: 100%;
+					background: #e3e3e3;
+					&.last {
+						background: unset;
+						background-image: linear-gradient(to bottom, rgba(227, 227, 227, 1) 50%, rgba(227, 227, 227, 0) 100%);
 					}
-					.experience-dates {
+				}
+				.experience-details-container {
+					padding-left: 15px;
+					.experience-duration-container {
+						display: flex;
+						align-items: center;
+						.experience-marker {
+							position: absolute;
+							left: -3px;
+							width: 21px;
+							height: 21px;
+							background: blue;
+							border-radius: 50%;
+							box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+							z-index: 10;
+						}
+						.experience-dates {
+							margin: 0;
+							font-size: 0.95em;
+							@media (min-width: $desktop) {
+								font-size: 1.125em;
+							}
+						}
+					}
+					.experience-title {
+						font-size: 1.7em;
+						color: black;
+						text-transform: uppercase;
+						font-weight: 700;
 						margin: 0;
-						font-size: 0.95em;
+						@media(min-width: $mobile-small) {
+							font-size: 2em;
+						}
+						@media(min-width: $desktop) {
+							font-size: $desktop-font-title;
+						}
 					}
-				}
-				.experience-title {
-					font-size: 1.7em;
-					color: black;
-					text-transform: uppercase;
-					font-weight: 700;
-					margin: 0;
-					@media(min-width: $mobile-small) {
-						font-size: 2em;
+					.experience-sub-title {
+						font-size: 1.2em;
+						color: $light-grey;
+						text-transform: uppercase;
+						font-weight: 700;
+						margin: 0;
+						@media(min-width: $mobile-small) {
+							font-size: 1.5em;
+						}
+						@media(min-width: $desktop) {
+							font-size: $desktop-font-sub-title;
+						}
 					}
-				}
-				.experience-sub-title {
-					font-size: 1.2em;
-					color: $light-grey;
-					text-transform: uppercase;
-					font-weight: 700;
-					margin: 0;
-					@media(min-width: $mobile-small) {
-						font-size: 1.5em;
+					.experience-bullets {
+						margin: 10px 0;
+						padding-left: 20px;
 					}
-				}
-				.experience-bullets {
-					margin: 10px 0;
-					padding-left: 20px;
-				}
-				.experience-bullet {
-					line-height: 30px;
+					.experience-bullet {
+						line-height: 30px;
+						@media(min-width: $desktop) {
+							line-height: 42px;
+							font-size: $desktop-font-small;
+						}
+					}
 				}
 			}
 		}
+		
 	}
 	.footer {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: rgba(0, 0, 0, 0.5)
+		background: rgba(0, 0, 0, 0.5);
+		@media(min-width: $desktop) {
+			line-height: 42px;
+			font-size: $desktop-font-small;
+		}
+		
 	}
 }

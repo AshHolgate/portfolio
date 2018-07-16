@@ -86,7 +86,7 @@ class Portfolio extends Component {
 										<p className="skill-choice-description-title">UX/UI Designer</p>
 									}
 									{selectedSkill === 1 &&
-										<p className="skill-choice-description">Front end developer who focuses on writing clean, elegant, and efficient code</p>
+										<p className="skill-choice-description">Front end developer who focuses on writing clean and efficient code</p>
 									}
 									{selectedSkill === 2 &&
 										<p className="skill-choice-description">UX/UI designer with a passion for designing beautiful and functional user experiences</p>
@@ -117,8 +117,6 @@ class Portfolio extends Component {
 											<p className="technical-competencies-list-item">Illustrator</p>
 											<p className="technical-competencies-list-item">Photoshop</p>
 											<p className="technical-competencies-list-item">Balsamiq</p>
-											<p className="technical-competencies-list-item">Design Skill</p>
-											<p className="technical-competencies-list-item">Aesthetic Flair</p>
 										</div>
 									}
 								</div>
@@ -144,7 +142,7 @@ class Portfolio extends Component {
 								Lottery Simulator
 							</p>
 							<p className="project-description">
-								Built in <b>React</b>, using <b>Redux</b>.
+								Built in <b>React</b>, using <b>Redux</b> and <b>TypeScript</b>.
 							</p>
 							<p className="project-description">
 								First choose which lottery you'd like to simulate, either the UK Lotto or Euromillions, then pick your numbers and begin! The simulator will run accurate simulations as fast as your device will allow until you are lucky enough to hit the jackpot. When will you win?
