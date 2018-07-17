@@ -120,7 +120,7 @@ class Portfolio extends Component {
 											<p className="technical-competencies-list-item">Javascript</p>
 											<p className="technical-competencies-list-item">AngularJS</p>
 											<p className="technical-competencies-list-item">SCSS</p>
-											<p className="technical-competencies-list-item">BEM</p>
+											<p className="technical-competencies-list-item">Webpack</p>
 											<p className="technical-competencies-list-item">Git</p>
 										</div>
 									}
@@ -184,7 +184,7 @@ class Portfolio extends Component {
 							<div className="experience-details-container">
 								<div className="experience-duration-container">
 									<div className="experience-marker" />
-									<p className="experience-dates">Oct 2017 - Present</p>
+									<p className="experience-dates">Aug 2017 - Present</p>
 								</div>
 								<ReactGA.OutboundLink className="experience-title"
 									eventLabel="Visited Luxtripper Via Title"
