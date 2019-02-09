@@ -184,7 +184,7 @@ class Portfolio extends Component {
 							<div className="experience-details-container">
 								<div className="experience-duration-container">
 									<div className="experience-marker" />
-									<p className="experience-dates">July 2017 - Present</p>
+									<p className="experience-dates">October 2017 - Present</p>
 								</div>
 								<ReactGA.OutboundLink className="experience-title"
 									eventLabel="Visited Luxtripper Via Title"

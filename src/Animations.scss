@@ -148,6 +148,23 @@
 	}
 }
 
+@keyframes buttonBeforeDivHoverSlideIn {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+@keyframes buttonBeforeDivHoverSlideOut {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(200%);
+	}
+}
+
 @media (min-width: $desktop) {
 	@keyframes leftVerticalLineAnimation {
 		0% {
